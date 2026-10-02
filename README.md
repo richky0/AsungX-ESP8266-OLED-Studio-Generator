@@ -1,5 +1,15 @@
 # AsungX ESP8266 OLED Studio Generator
 
+[![Firmware](https://img.shields.io/badge/Firmware-AsungX%20v1.1.0-blue?logo=github)](https://github.com/richky0/AsungX-Deauther-esp8266)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+[![Docker](https://img.shields.io/badge/Docker-ready-blue?logo=docker)](docker-compose.yml)
+
+> 🌐 **Web-based converter** untuk membuat animasi OLED dari video/GIF.
+> 
+> 🔗 **Firmware utama:** [AsungX-Deauther-esp8266](https://github.com/richky0/AsungX-Deauther-esp8266)
+
+---
+
 Web-based video/GIF converter untuk ESP8266 SSD1306 OLED (128x64) animations.
 
 Output `.bin` format compatible dengan [AsungX Deauther firmware](https://github.com/richky0/AsungX-Deauther-esp8266).
