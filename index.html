@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="id" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AsungX Animation Studio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Asung<span>X</span> Animation Studio</h1>
+  <button id="theme" class="ghost">🌙 / ☀️</button>
+</header>
+<main>
+  <section class="panel">
+    <label id="drop" for="file">📁 Pilih video/GIF atau drag &amp; drop di sini</label>
+    <input type="file" id="file" accept="video/*,image/gif,.gif" hidden>
+    <div id="info" class="muted">Belum ada sumber.</div>
+
+    <h3>✍️ Teks Bergerak</h3>
+    <textarea id="ttext" rows="2" placeholder="Ketik teks di sini (Enter = baris baru untuk mode Naik/Turun)">AsungX Deauther</textarea>
+    <label>Arah
+      <select id="tmode">
+        <option value="left">← Kiri</option><option value="right">→ Kanan</option>
+        <option value="up">↑ Naik</option><option value="down">↓ Turun</option>
+      </select>
+    </label>
+    <label>Font
+      <select id="tfont">
+        <option value="monospace">Monospace</option><option value="sans-serif">Sans-serif</option><option value="serif">Serif</option>
+      </select>
+    </label>
+    <label class="row"><input type="checkbox" id="tbold" checked> Tebal</label>
+    <label>Ukuran font: <b id="tsizeV">16</b> px<input type="range" id="tsize" min="8" max="64" value="16"></label>
+    <label>Kecepatan: <b id="tspV">60</b> px/detik<input type="range" id="tspeed" min="10" max="300" value="60"></label>
+    <button id="tgo">Gunakan teks ini</button>
+    <div id="tinfo" class="muted"></div>
+
+    <h3>Parameter</h3>
+    <label>FPS: <b id="fpsV">15</b><input type="range" id="fps" min="5" max="30" value="15"></label>
+    <label>Durasi (detik)<input type="number" id="dur" min="0.5" max="60" step="0.1" value="3"></label>
+    <label>Start (detik)<input type="number" id="start" min="0" step="0.1" value="0"></label>
+    <label>Resolusi
+      <select id="res">
+        <option value="128x64">128×64</option><option value="128x32">128×32</option>
+        <option value="96x48">96×48</option><option value="64x64">64×64</option>
+      </select>
+    </label>
+    <label>Threshold: <b id="thrV">128</b><input type="range" id="thr" min="0" max="255" value="128"></label>
+    <label class="row"><input type="checkbox" id="dith" checked> Dithering (Floyd-Steinberg)</label>
+    <label class="row"><input type="checkbox" id="delta" checked> Delta encoding</label>
+    <label class="row"><input type="checkbox" id="inv"> Invert</label>
+
+    <h3>Auto-Cut</h3>
+    <button id="cut" class="ghost">✂️ Auto-cut (1 putaran / batas 45 KB)</button>
+    <div id="cutMsg" class="muted"></div>
+
+    <div class="row2">
+      <button id="conv">Convert</button>
+      <button id="reset" class="ghost">Reset</button>
+    </div>
+    <progress id="prog" value="0" max="1" hidden></progress>
+  </section>
+
+  <section class="panel">
+    <canvas id="oled" width="128" height="64"></canvas>
+    <div class="row2">
+      <button id="prev" class="ghost">⏮</button>
+      <button id="play" class="ghost">▶</button>
+      <button id="next" class="ghost">⏭</button>
+      <select id="spd"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select>
+    </div>
+    <input type="range" id="scrub" min="0" max="0" value="0">
+    <h3>Info</h3>
+    <div id="fi" class="muted">Frame: - / -</div>
+    <div id="stats"></div>
+    <div id="warn"></div>
+    <button id="dl" disabled>⬇ Download .bin</button>
+  </section>
+</main>
+<script src="app.js"></script>
+<script src="text.js"></script>
+</body>
+</html>

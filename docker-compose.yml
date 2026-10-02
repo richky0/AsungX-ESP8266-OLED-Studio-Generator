@@ -1,0 +1,7 @@
+services:
+  animation-studio:
+    build: .
+    container_name: asungx-animation-studio
+    restart: unless-stopped
+    ports:
+      - "8088:80"
